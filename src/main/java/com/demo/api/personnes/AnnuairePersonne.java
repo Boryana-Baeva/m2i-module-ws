@@ -20,4 +20,8 @@ public class AnnuairePersonne {
     public Personne getPersonne(int id){
         return personnes.get(id);
     }
+
+    public void deletePersonne(Integer id){
+        personnes.remove(id);
+    }
 }
