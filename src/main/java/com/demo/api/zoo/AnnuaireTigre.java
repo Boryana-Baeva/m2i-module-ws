@@ -38,7 +38,7 @@ public class AnnuaireTigre {
         if(tigre.getCouleur() != null)
             tigreExisting.setCouleur(tigre.getCouleur());
 
-        if(tigre.getAge() != 0)
+        if(tigre.getAge() != null)
             tigreExisting.setAge(tigre.getAge());
 
         tigres.replace(id, tigreExisting);

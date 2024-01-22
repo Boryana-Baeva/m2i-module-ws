@@ -4,12 +4,12 @@ public class Tigre {
     private Integer id;
     private String nom;
     private String couleur;
-    private int age;
+    private Integer age;
 
     public Tigre() {
     }
 
-    public Tigre(String nom, String couleur, int age) {
+    public Tigre(String nom, String couleur, Integer age) {
         this.nom = nom;
         this.couleur = couleur;
         this.age = age;
@@ -39,11 +39,11 @@ public class Tigre {
         this.couleur = couleur;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
