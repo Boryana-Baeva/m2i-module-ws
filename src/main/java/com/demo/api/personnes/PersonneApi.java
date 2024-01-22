@@ -38,4 +38,10 @@ public class PersonneApi {
     public void deletePersonne(@PathParam("id") Integer id) {
         annuaire.deletePersonne(id);
     }
+
+    @PUT
+    @Path("/{id}")
+    public void updatePersonne(Personne personne, @PathParam("id") Integer id) {
+        annuaire.updatePersonne(id, personne);
+    }
 }
