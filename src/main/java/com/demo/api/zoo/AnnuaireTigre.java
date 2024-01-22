@@ -32,14 +32,7 @@ public class AnnuaireTigre {
     public void patch(Integer id, Tigre tigre) {
         Tigre tigreExisting = tigres.get(id);
 
-        if(tigre.getNom() != null)
-            tigreExisting.setNom(tigre.getNom());
-
-        if(tigre.getCouleur() != null)
-            tigreExisting.setCouleur(tigre.getCouleur());
-
-        if(tigre.getAge() != null)
-            tigreExisting.setAge(tigre.getAge());
+        tigreExisting.setNotNull(tigre);
 
         tigres.replace(id, tigreExisting);
     }

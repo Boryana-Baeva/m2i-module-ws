@@ -56,4 +56,15 @@ public class Tigre {
                 ", age=" + age +
                 '}';
     }
+
+    public void setNotNull(Tigre tigre) {
+        if(tigre.getNom() != null)
+            setNom(tigre.getNom());
+
+        if(tigre.getCouleur() != null)
+            setCouleur(tigre.getCouleur());
+
+        if(tigre.getAge() != null)
+            setAge(tigre.getAge());
+    }
 }
