@@ -2,14 +2,21 @@ package com.demo.api.reservationsSpectacles;
 
 public class Reservation {
     private Integer id;
-    private Integer spectacleId;
+    private Spectacle spectacle;
     private String client;
+    private ReservationStatus status = ReservationStatus.PENDING;
 
     public Reservation() {
     }
 
-    public Reservation(Integer spectacleId, String client) {
-        this.spectacleId = spectacleId;
+    public Reservation(Spectacle spectacle, String client, ReservationStatus status) {
+        this.spectacle = spectacle;
+        this.client = client;
+        this.status = status;
+    }
+
+    public Reservation(Spectacle spectacle, String client) {
+        this.spectacle = spectacle;
         this.client = client;
     }
 
@@ -21,12 +28,12 @@ public class Reservation {
         this.id = id;
     }
 
-    public Integer getSpectacleId() {
-        return spectacleId;
+    public Spectacle getSpectacle() {
+        return spectacle;
     }
 
-    public void setSpectacleId(Integer spectacleId) {
-        this.spectacleId = spectacleId;
+    public void setSpectacle(Spectacle spectacle) {
+        this.spectacle = spectacle;
     }
 
     public String getClient() {
@@ -37,12 +44,21 @@ public class Reservation {
         this.client = client;
     }
 
+    public ReservationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ReservationStatus status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Reservation{" +
                 "id=" + id +
-                ", spectacleId=" + spectacleId +
+                ", spectacle=" + spectacle +
                 ", client='" + client + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

@@ -14,6 +14,8 @@ public class SpectacleManager {
         return spectacleManager;
     }
 
+    private SpectacleManager(){}
+
     public void add(Spectacle spectacle) {
         idCount++;
         spectacle.setId(idCount);

@@ -1,6 +1,7 @@
 package com.demo.api.reservationsSpectacles;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class ReservationManager {
     private HashMap<Integer, Reservation> reservations = new HashMap<>();
@@ -13,9 +14,15 @@ public class ReservationManager {
         return reservationManager;
     }
 
+    private ReservationManager(){}
+
     public void add(Reservation reservation) {
         idCount++;
         reservation.setId(idCount);
         reservations.put(idCount,reservation);
+    }
+
+    public List<Reservation> getAll() {
+        return reservations.values().stream().toList();
     }
 }

@@ -84,7 +84,7 @@ public class SpectacleAPI {
 
     @PATCH
     @Path("/{id}")
-    public Response patchPersonne(Spectacle spectacle, @PathParam("id") Integer id) {
+    public Response patch(Spectacle spectacle, @PathParam("id") Integer id) {
         // BAD REQUEST
 //        Response errorResponse = getErrorResponse(spectacle);
 //        if(errorResponse != null) {
