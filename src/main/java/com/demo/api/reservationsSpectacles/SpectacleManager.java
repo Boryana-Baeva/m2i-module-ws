@@ -1,7 +1,7 @@
 package com.demo.api.reservationsSpectacles;
 
-
 import java.util.HashMap;
+import java.util.List;
 
 public class SpectacleManager {
     private HashMap<Integer, Spectacle> spectacles = new HashMap<>();
@@ -23,5 +23,25 @@ public class SpectacleManager {
 
     public Spectacle getById(Integer id){
         return spectacles.get(id);
+    }
+
+    public List<Spectacle> getAll() {
+        return spectacles.values().stream().toList();
+    }
+
+    public void delete(Integer id){
+        spectacles.remove(id);
+    }
+
+    public void update(Integer id, Spectacle spectacle) {
+        spectacles.replace(id, spectacle);
+    }
+
+    public void patch(Integer id, Spectacle spectacle) {
+        Spectacle spectacleExisting = spectacles.get(id);
+
+        spectacleExisting.setNotNull(spectacle);
+
+        spectacles.replace(id, spectacleExisting);
     }
 }

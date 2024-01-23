@@ -1,25 +1,19 @@
 package com.demo.api.reservationsSpectacles;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
 public class Spectacle {
     private Integer id;
     private String titre;
     private String lieu;
-    private LocalDate date;
-    private LocalTime time;
+    private String date;
     private Integer nbPlacesDisponibles;
 
     public Spectacle() {
     }
 
-    public Spectacle(String titre, String lieu, LocalDate date, LocalTime time, Integer nbPlacesDisponibles) {
+    public Spectacle(String titre, String lieu, String date,Integer nbPlacesDisponibles) {
         this.titre = titre;
         this.lieu = lieu;
         this.date = date;
-        this.time = time;
         this.nbPlacesDisponibles = nbPlacesDisponibles;
     }
 
@@ -47,20 +41,12 @@ public class Spectacle {
         this.lieu = lieu;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
     }
 
     public Integer getNbPlacesDisponibles() {
@@ -82,8 +68,21 @@ public class Spectacle {
                 ", titre='" + titre + '\'' +
                 ", lieu='" + lieu + '\'' +
                 ", date=" + date +
-                ", time=" + time +
                 ", nbPlacesDisponibles=" + nbPlacesDisponibles +
                 '}';
+    }
+
+    public void setNotNull(Spectacle spectacle) {
+        if(spectacle.getTitre() != null)
+            setTitre(spectacle.getTitre());
+
+        if(spectacle.getLieu() != null)
+            setLieu(spectacle.getLieu());
+
+        if(spectacle.getDate() != null)
+            setDate(spectacle.getDate());
+
+        if(spectacle.getNbPlacesDisponibles() != null)
+            setNbPlacesDisponibles(spectacle.getNbPlacesDisponibles());
     }
 }
