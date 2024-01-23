@@ -42,8 +42,13 @@ public class PersonneApi {
     @GET()
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Personne getPersonne(@PathParam("id") Integer id){
-        return annuaire.getPersonne(id);
+    public Response getPersonne(@PathParam("id") Integer id){
+        Personne personne = annuaire.getPersonne(id);
+        if(personne == null){
+            // 404
+            return Response.status(404).entity("Person Not Found !").build();
+        }
+        return Response.ok(personne).build();
     }
 
     @DELETE
