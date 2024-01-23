@@ -1,4 +1,5 @@
 # Tasks :
+##
 ## TP WS CRUD
 
 ### Créer une API web avec Jakarta qui permette de gérer les tigres qu’on trouve dans un zoo.
@@ -17,7 +18,8 @@
 ### - DELETE /api/tigres/4
 ### - GET /api/tigres/4
 ### - PUT /api/tigres/4
-
+##
+##
 ## TP : Un Service de réservation de places de spectacle
 
 ### Nous envisageons de développer un système en ligne pour la réservation de places pour des concerts. Ce service, accessible via une interface de programmation d'applications (API) sur le Web, sera intégré dans des applications mobiles. Ce système ne comprend pas une base de données pour les utilisateurs : chaque utilisateur est identifié uniquement par un pseudo lorsqu'il effectue une réservation.
