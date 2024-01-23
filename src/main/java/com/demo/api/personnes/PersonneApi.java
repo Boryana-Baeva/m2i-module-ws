@@ -59,8 +59,24 @@ public class PersonneApi {
 
     @PUT
     @Path("/{id}")
-    public void updatePersonne(Personne personne, @PathParam("id") Integer id) {
+    public Response updatePersonne(Personne personne, @PathParam("id") Integer id) {
+        // BAD REQUEST
+        if(!id.equals(personne.getId())){
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("Id differénts !")
+                    .build();
+        }
+        else { // NOT FOUND
+            Personne p = annuaire.getPersonne(id);
+            if(p == null){
+                return Response.status(404)
+                        .entity("Id Not Found !")
+                        .build();
+            }
+        }
+        // OK
         annuaire.updatePersonne(id, personne);
+        return Response.ok().build();
     }
 
     @PATCH
