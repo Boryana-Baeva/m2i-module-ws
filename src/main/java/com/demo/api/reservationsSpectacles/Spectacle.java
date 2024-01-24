@@ -1,5 +1,8 @@
 package com.demo.api.reservationsSpectacles;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Spectacle {
     private Integer id;
     private String titre;
@@ -84,5 +87,10 @@ public class Spectacle {
 
         if(spectacle.getNbPlacesDisponibles() != null)
             setNbPlacesDisponibles(spectacle.getNbPlacesDisponibles());
+    }
+
+    public LocalDate getLocalDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(date, formatter);
     }
 }
